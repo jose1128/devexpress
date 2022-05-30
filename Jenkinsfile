@@ -1,13 +1,12 @@
 pipeline {
     agent any
+    tools {
+        gradle "GRADLE_LATEST"
+    }
     stages{
         stage("build"){
             steps{
-                node {
-                    withGradle {
-                        sh './gradlew build'
-                    }
-                }
+                sh 'gradle --version'
             }
         }
 

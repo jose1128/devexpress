@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage("build"){
             steps{
-                sh 'gradle --version'
+                sh 'gradle clean build -x test'
             }
         }
 

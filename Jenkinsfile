@@ -3,9 +3,10 @@ pipeline {
     stages{
         stage("build"){
             steps{
-                sh "ls"
                 sh "chmod +x gradlew"
-                sh "./gradlew clean build"
+                sh '''#!/bin/bash
+                    ./gradlew clean build -x test 
+                '''
             }
         }
 

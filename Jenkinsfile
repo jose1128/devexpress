@@ -3,6 +3,8 @@ pipeline {
     stages{
         stage("build"){
             steps{
+                sh "pwd"
+                sh "ls"
                 sh "./gradlew clean build"
             }
         }
